@@ -1,3 +1,9 @@
+# The PowerShell script to collect the artifacts and evidences from a windows-based hosts locally and via remote.
+# This script can be executed locally and can be uploaded to MD-E (microsoft Defender for Endpoint) library and run it remotely on a host.
+# This powershell script will help to collect the details about Host information, Local User accounts, user accounts added into local Administrators group, Microsoft defender exclusion added, System environment variables,
+# active scheduled tasks, Run & RunOnce keys, User logon script paths, installed application, Running services and services with automatic startup type, Running processes with signer info.
+# This script will help us to find the possible persistent tactic used by the attacker and to ensure the endpoint security at its best.
+
 function services
 {
 $runningServices = Get-Service | Where-Object { $_.Status -eq 'Running' }
